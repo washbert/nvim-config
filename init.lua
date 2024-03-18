@@ -1,2 +1,2 @@
 require("washbert")
-print("hello Initial")
+print("NEOVIM has been Initiallized!!!!!!")
