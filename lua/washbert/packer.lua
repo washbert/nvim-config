@@ -24,6 +24,7 @@ use('theprimeagen/harpoon')
 use('mbbill/undotree')
 use('tpope/vim-fugitive')
 use('github/copilot.vim')
+use('nvim-lualine/lualine.nvim')
 use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v3.x',
