@@ -10,7 +10,7 @@ The goal will be to update the readme with the Plugins, configurations, dependen
 ```
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
-sudo tar -C /opt -xzf nvim-linux64.tar.gz`
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
 ```
 
 2. Create nvim config directory
