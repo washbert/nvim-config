@@ -12,13 +12,7 @@ return require('packer').startup(function(use)
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
-use ({'sainnhe/gruvbox-material',
-	as = 'gruvbox-material',
-	config = function()
-		vim.cmd('colorscheme gruvbox-material')
-	end
-
-})
+use { "catppuccin/nvim", as = "catppuccin" }
 use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
 use('theprimeagen/harpoon')
 use('mbbill/undotree')
