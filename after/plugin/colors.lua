@@ -1,3 +1,16 @@
+require("no-clown-fiesta").setup({
+  transparent = false, -- Enable this to disable the bg color
+  styles = {
+    -- You can set any of the style values specified for `:h nvim_set_hl`
+    comments = {},
+    functions = {},
+    keywords = {},
+    lsp = { underline = true },
+    match_paren = {},
+    type = { bold = true },
+    variables = {},
+  },
+})
 require("catppuccin").setup({
     flavour = "auto", -- latte, frappe, macchiato, mocha
     background = { -- :h background
@@ -31,7 +44,9 @@ require("catppuccin").setup({
         -- miscs = {}, -- Uncomment to turn off hard-coded styles
     },
     color_overrides = {},
-    custom_highlights = {},
+    custom_highlights = {
+	LineNr = { fg = "#FFA500" },
+    },
     default_integrations = true,
     integrations = {
         cmp = true,

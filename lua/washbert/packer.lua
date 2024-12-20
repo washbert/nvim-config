@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
+use('aktersnurra/no-clown-fiesta.nvim')
 use { "catppuccin/nvim", as = "catppuccin" }
 use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
 use('theprimeagen/harpoon')
@@ -19,6 +20,7 @@ use('mbbill/undotree')
 use('tpope/vim-fugitive')
 use('github/copilot.vim')
 use('nvim-lualine/lualine.nvim')
+use('chentoast/marks.nvim')
 use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v3.x',
