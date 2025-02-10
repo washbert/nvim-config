@@ -14,6 +14,8 @@ return require('packer').startup(function(use)
 }
 use('aktersnurra/no-clown-fiesta.nvim')
 use { "catppuccin/nvim", as = "catppuccin" }
+use { "rose-pine/neovim", as = "rose-pine" }
+use { "rebelot/kanagawa.nvim", as = "kanagawa" }
 use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
 use('theprimeagen/harpoon')
 use('mbbill/undotree')

@@ -5,3 +5,9 @@ vim.keymap.set('n', '<leader>ps', function()
 	builtin.grep_string({search = vim.fn.input("Grep > ")});
 end)
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fr', builtin.registers, {})
+vim.keymap.set('n', '<leader>fq', builtin.autocommands, {})
+vim.keymap.set('n', '<leader>fg', builtin.git_status, {})
+vim.keymap.set('n', '<leader>fd', function () 
+	builtin.diagnostics({bufrn=0});
+end)
