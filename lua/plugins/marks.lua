@@ -1,4 +1,7 @@
-require'marks'.setup {
+return {
+	"chentoast/marks.nvim",
+	config = function()
+require('marks').setup({
   -- whether to map keybinds or not. default true
   default_mappings = true,
   -- which builtin marks to show. default {}
@@ -33,4 +36,6 @@ require'marks'.setup {
     annotate = false,
   },
   mappings = {}
+})
+end,
 }
