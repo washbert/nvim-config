@@ -6,7 +6,28 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
-    dashboard = { enabled = true },
+    dashboard = { enabled = true,
+---@class snacks.dashboard.Config
+---@field enabled? boolean
+---@field sections snacks.dashboard.Section
+---@field formats table<string, snacks.dashboard.Text|fun(item:snacks.dashboard.Item, ctx:snacks.dashboard.Format.ctx):snacks.dashboard.Text>
+  preset = {
+    -- Used by the `header` section
+    header = [[
+
+██╗    ██╗ █████╗ ███████╗██╗  ██╗██████╗ ███████╗██████╗ ████████╗
+██║    ██║██╔══██╗██╔════╝██║  ██║██╔══██╗██╔════╝██╔══██╗╚══██╔══╝
+██║ █╗ ██║███████║███████╗███████║██████╔╝█████╗  ██████╔╝   ██║   
+██║███╗██║██╔══██║╚════██║██╔══██║██╔══██╗██╔══╝  ██╔══██╗   ██║   
+╚███╔███╔╝██║  ██║███████║██║  ██║██████╔╝███████╗██║  ██║   ██║   
+ ╚══╝╚══╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝  ]],
+  },
+  sections = {
+    { section = "header" },
+    { section = "keys", gap = 1, padding = 1 },
+    { section = "startup" },
+  },
+			},
     explorer = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
@@ -24,7 +45,43 @@ return {
       notification = {
          wo = { wrap = true } -- Wrap notifications
       }
-    }
+    },
+	terminal = {
+		  bo = {
+    filetype = "snacks_terminal",
+  },
+  wo = {},
+  keys = {
+    q = "hide",
+    gf = function(self)
+      local f = vim.fn.findfile(vim.fn.expand("<cfile>"), "**")
+      if f == "" then
+        Snacks.notify.warn("No file under cursor")
+      else
+        self:hide()
+        vim.schedule(function()
+          vim.cmd("e " .. f)
+        end)
+      end
+    end,
+    term_normal = {
+      "<esc>",
+      function(self)
+        self.esc_timer = self.esc_timer or (vim.uv or vim.loop).new_timer()
+        if self.esc_timer:is_active() then
+          self.esc_timer:stop()
+          vim.cmd("stopinsert")
+        else
+          self.esc_timer:start(200, 0, function() end)
+          return "<esc>"
+        end
+      end,
+      mode = "t",
+      expr = true,
+      desc = "Double escape to normal mode",
+    },
+  },
+	},
   },
   keys = {
     -- Top Pickers & Explorer
