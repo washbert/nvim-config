@@ -8,9 +8,9 @@ The goal will be to update the readme with the Plugins, configurations, dependen
 
 1. Install neovim
 ```
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim
-sudo tar -C /opt -xzf nvim-linux64.tar.gz
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 ```
 
 2. Create nvim config directory
@@ -20,12 +20,9 @@ mkdir -p ~/.config/nvim
 
 3. Clone repo into nvim config directory
 
-4. Install Nvim packer plugin manager
-```
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+4. Ensure C++ is installed
  ```
+sudo apt update && \
+sudo apt install build-essential
+```
 
- 5. Ensure C++ is installed
-
- 6. Open config folder and source init.lua then run PackerSync
