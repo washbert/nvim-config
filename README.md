@@ -25,4 +25,7 @@ mkdir -p ~/.config/nvim
 sudo apt update && \
 sudo apt install build-essential
 ```
-
+5. For Typescript/Javascript support run the following commands
+`npm install -g typescript-language-server typescript`
+>[!TIP]
+> Be sure to use ts_ls for the ensure installed in the lsp config
