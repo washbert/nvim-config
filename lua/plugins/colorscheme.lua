@@ -2,7 +2,7 @@ return {
 	{
 	"catppuccin/nvim",
 	name = "catppuccin",
-	priority = 1000,
+	priority = 2,
 	config = function()
 	require("catppuccin").setup({
 	    flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -92,5 +92,21 @@ return {
 		    },
 		})
 		end
+	},
+	-- lua/plugins/rose-pine.lua
+{
+	"rose-pine/neovim",
+	name = "rose-pine",
+	config = function()
+		vim.cmd("colorscheme rose-pine-moon")
+	end
+},
+	{
+		"sainnhe/everforest",
+		name = "everforest",
+		priority = 1,
+			config = function()
+				vim.cmd("colorscheme everforest")
+			end
 	}
 }

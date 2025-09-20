@@ -33,8 +33,9 @@ return {
     input = { enabled = true },
     notifier = {
       enabled = true,
-      timeout = 3000,
+      timeout = 5000,
     },
+			image = { enabled = true },
     picker = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },
